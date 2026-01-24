@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+
+@layer base {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .wrapper {
+        min-height: 100vh;
+        background-image: linear-gradient(to bottom right, #eaeef1, #dde5ec);
+    }
+}
+
+@layer components {
+    .primary-btn {
+        cursor: pointer;
+        background-color: #3636ff;
+        border: 2px solid #5050fe;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font: 600 1.2rem Arial;
+        color: #eaeef1;
+        transition: all 100ms;
+    }
+
+    .secundary-btn {
+        cursor: pointer;
+        border: 3px solid #3636ff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font: 600 1.2rem Arial;
+        color: #3636ff;
+        transition: all 100ms;
+    }
+
+    :is(.primary-btn, .secundary-btn):not(:disabled):hover {
+        transform: scale(1.05);
+    }
+}
+
+@utility fade-in-animation {
+    animation: fade-in 100ms ease forwards;
+}
+
+@utility fade-out-animation {
+    animation: fade-out 100ms ease forwards;
+}
+
+@utility animate-progress {
+    animation: animate-progress 15s linear forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes animate-progress {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0;
+    }
+}
