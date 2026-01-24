@@ -5,7 +5,7 @@ export default function Footer({ selected, setSelected }) {
                 <ul className='grid grid-cols-3 gap-4'>
                     <li>
                         <button
-                            className='h-full w-full cursor-pointer rounded-lg bg-blue-600 px-4 py-2 text-center text-lg font-semibold text-white transition-all duration-100 disabled:cursor-no-drop disabled:opacity-50'
+                            className='primary-btn w-full disabled:cursor-no-drop disabled:opacity-50'
                             disabled={selected === 'questions'}
                             onClick={() => setSelected('questions')}
                         >
@@ -14,7 +14,7 @@ export default function Footer({ selected, setSelected }) {
                     </li>
                     <li>
                         <button
-                            className='h-full w-full cursor-pointer rounded-lg bg-blue-600 px-4 py-2 text-center text-lg font-semibold text-white transition-all duration-100 disabled:cursor-no-drop disabled:opacity-50'
+                            className='primary-btn w-full disabled:cursor-no-drop disabled:opacity-50'
                             disabled={selected === 'flashcards'}
                             onClick={() => setSelected('flashcards')}
                         >
@@ -23,7 +23,7 @@ export default function Footer({ selected, setSelected }) {
                     </li>
                     <li>
                         <button
-                            className='h-full w-full cursor-pointer rounded-lg bg-blue-600 px-4 py-2 text-center text-lg font-semibold text-white transition-all duration-100 disabled:cursor-no-drop disabled:opacity-50'
+                            className='primary-btn w-full disabled:cursor-no-drop disabled:opacity-50'
                             disabled={selected === 'quiz'}
                             onClick={() => setSelected('quiz')}
                         >

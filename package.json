@@ -10,7 +10,6 @@
         "preview": "rsbuild preview"
     },
     "dependencies": {
-        "prettier-plugin-tailwindcss": "^0.7.2",
         "react": "^19.2.3",
         "react-dom": "^19.2.3"
     },
@@ -19,6 +18,7 @@
         "@rsbuild/plugin-react": "^1.4.2",
         "@tailwindcss/postcss": "^4.1.18",
         "prettier": "^3.7.3",
+        "prettier-plugin-tailwindcss": "^0.7.2",
         "tailwindcss": "^4.1.18"
     }
 }

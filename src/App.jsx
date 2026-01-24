@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import Questions from './components/Questions';
 import FlashCards from './components/FlashCards';
 import Quiz from './components/Quiz';
 import Footer from './components/Footer';
-import { useState } from 'react';
 
 export default function App() {
     const [selected, setSelected] = useState('questions');

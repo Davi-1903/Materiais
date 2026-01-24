@@ -1,5 +1,18 @@
 @import 'tailwindcss';
 
+:root {
+    --base-color1: #3535ff;
+    --base-text1: #1e2939;
+}
+
+@theme inline {
+    --color-color1-50: hsl(from var(--base-color1) h s calc(l - 5));
+    --color-color1-100: var(--base-color1);
+    --color-color1-200: hsl(from var(--base-color1) h s calc(l + 5));
+
+    --color-text-color: var(--base-text1);
+}
+
 @layer base {
     * {
         box-sizing: border-box;
@@ -17,8 +30,8 @@
 @layer components {
     .primary-btn {
         cursor: pointer;
-        background-color: #3636ff;
-        border: 2px solid #5050fe;
+        background-color: var(--base-color1);
+        border: 2px solid var(--color-color1-200);
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
         font: 600 1.2rem Arial;
@@ -28,11 +41,11 @@
 
     .secundary-btn {
         cursor: pointer;
-        border: 3px solid #3636ff;
+        border: 3px solid var(--base-color1);
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
         font: 600 1.2rem Arial;
-        color: #3636ff;
+        color: var(--base-color1);
         transition: all 100ms;
     }
 

@@ -3,7 +3,7 @@ export default function Options({ questions, questionId, answeredId, toRespond, 
         if (answeredId !== null && questions.at(questionId).correctAnswerId === id)
             return 'border-green-600 text-green-600';
         if (answeredId === id && questions.at(questionId).correctAnswerId !== id) return 'border-red-600 text-red-600';
-        return 'border-gray-800 text-gray-800';
+        return 'border-text-color text-text-color';
     }
 
     return (
@@ -22,7 +22,7 @@ export default function Options({ questions, questionId, answeredId, toRespond, 
                     ))}
                 </ul>
                 <button
-                    className='float-end mt-4 cursor-pointer rounded-xl bg-[#3636ff] px-4 py-2 text-[1.2rem] text-white transition-all duration-100 hover:not-disabled:scale-102 disabled:cursor-no-drop disabled:opacity-50'
+                    className='bg-color1-100 float-end mt-4 cursor-pointer rounded-xl px-4 py-2 text-[1.2rem] text-white transition-all duration-100 hover:not-disabled:scale-102 disabled:cursor-no-drop disabled:opacity-50'
                     disabled={answeredId === null}
                     onClick={() => toRespond(answeredId === questions.at(questionId).correctAnswerId)}
                 >

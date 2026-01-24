@@ -22,12 +22,12 @@ export default function FlashCard({ question, answer, toRight, setToRight, addTo
             onClick={toggleInvert}
             role='button'
         >
-            <div className='absolute inset-0 rounded-2xl bg-linear-to-b from-[#3636ff] to-[#3838ff] backface-hidden'>
+            <div className='from-color1-100 to-color1-200 absolute inset-0 rounded-2xl bg-linear-to-b backface-hidden'>
                 <span className='absolute top-1/2 left-1/2 w-[calc(100%-2rem)] -translate-1/2 text-center text-[1.2rem] text-balance text-white'>
                     {question}
                 </span>
             </div>
-            <div className='absolute inset-0 rotate-y-180 rounded-2xl bg-linear-to-b from-[#3636ff] to-[#3838ff] backface-hidden'>
+            <div className='from-color1-100 to-color1-200 absolute inset-0 rotate-y-180 rounded-2xl bg-linear-to-b backface-hidden'>
                 <span className='absolute top-1/2 left-1/2 w-[calc(100%-2rem)] -translate-1/2 text-center text-[1.2rem] text-balance text-white'>
                     {answer}
                 </span>
