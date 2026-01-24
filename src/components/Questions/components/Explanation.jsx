@@ -26,7 +26,7 @@ export default function Explanation({ explanation, setShowExplanation }) {
         >
             <article
                 ref={articleRef}
-                className='w-sm rounded-2xl bg-[#dde5ec] p-8 text-center text-[1.2rem] font-semibold text-gray-800 shadow-2xl'
+                className='w-sm rounded-2xl bg-white p-8 text-center text-[1.2rem] font-semibold text-gray-800 shadow-2xl'
             >
                 <p>{explanation}</p>
             </article>
