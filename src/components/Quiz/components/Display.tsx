@@ -1,4 +1,6 @@
-export default function Display({ questionId, questions, onAnimationEnd }) {
+import type { QuizDisplayProps } from '../../../interfaces/Props';
+
+export default function Display({ questionId, questions, onAnimationEnd }: QuizDisplayProps) {
     return (
         <article className='relative flex flex-1 items-center justify-center'>
             <div className='absolute top-4 left-4 flex w-[calc(100%-2rem)] items-center gap-4 lg:left-0 lg:w-full'>
@@ -14,7 +16,7 @@ export default function Display({ questionId, questions, onAnimationEnd }) {
                 </div>
             </div>
             <p className='text-text-color p-4 text-center text-[2.6rem] font-bold text-balance'>
-                {questions.at(questionId)?.question}
+                {questions[questionId]?.question}
             </p>
         </article>
     );

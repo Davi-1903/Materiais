@@ -1,4 +1,6 @@
-export default function Display({ questions, currentQuestionId }) {
+import type { QuestionsDisplayProps } from '../../../interfaces/Props';
+
+export default function Display({ questions, currentQuestionId }: QuestionsDisplayProps) {
     return (
         <article className='relative grid flex-2 place-items-center'>
             <div className='absolute top-2 left-2 flex h-fit w-[calc(100%-1rem)] items-center gap-4 lg:left-0 lg:w-full'>
@@ -15,7 +17,7 @@ export default function Display({ questions, currentQuestionId }) {
                 </span>
             </div>
             <p className='px-4 text-center text-[2rem] font-bold text-balance text-gray-800 lg:p-0'>
-                {questions.at(currentQuestionId).question}
+                {questions[currentQuestionId].question}
             </p>
         </article>
     );

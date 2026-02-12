@@ -1,16 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
+import type { Explanation } from '../../../interfaces/Props';
 
-export default function Explanation({ explanation, setShowExplanation }) {
+export default function Explanation({ explanation, setShowExplanation }: Explanation) {
     const [isClose, setClose] = useState(false);
-    const articleRef = useRef(null);
+    const articleRef = useRef<HTMLDivElement | null>(null);
 
     function onAnimationEnd() {
         if (isClose) setShowExplanation(false);
     }
 
     useEffect(() => {
-        function handleClick(event) {
-            if (articleRef.current && !articleRef.current.contains(event.target)) {
+        function handleClick(event: MouseEvent) {
+            if (articleRef.current?.contains(event.target as Node)) {
                 setClose(true);
             }
         }

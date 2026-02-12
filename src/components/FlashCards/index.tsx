@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import FlashCard from './components/FlashCard';
 import flashcards from './flashcardsList';
+import FlashCard from './components/FlashCard';
 
 export default function FlashCards() {
     const [toRight, setToRight] = useState(false);

@@ -1,16 +1,16 @@
 import { useState } from 'react';
+import questions from './questionsList';
 import Display from './components/Display';
 import Options from './components/Options';
 import End from './components/End';
-import questions from './questionsList';
 
 export default function App() {
     const [questionId, setQuestionId] = useState(0);
-    const [answeredId, setAnsweredId] = useState(null);
+    const [answeredId, setAnsweredId] = useState<number | null>(null);
     const [itsWrong, setWrong] = useState(false);
     const [corrects, setCorrests] = useState(0);
 
-    function toRespond(isCorrect) {
+    function toRespond(isCorrect: boolean): void {
         setQuestionId(prev => prev + 1);
         if (isCorrect && !itsWrong) setCorrests(prev => prev + 1);
         setAnsweredId(null);
@@ -23,12 +23,12 @@ export default function App() {
         setAnsweredId(null);
     }
 
-    function onAnimationEnd() {
+    function onAnimationEnd(): void {
         if (answeredId === null) setWrong(true);
-        setAnsweredId(questions.at(questionId).correctAnswerId);
+        setAnsweredId(questions[questionId].correctAnswerId);
     }
 
-    function handleClick(id) {
+    function handleClick(id: number): void {
         if (answeredId === null) setAnsweredId(id);
     }
 

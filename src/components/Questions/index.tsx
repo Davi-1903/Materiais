@@ -2,14 +2,14 @@ import { useState } from 'react';
 import Explanation from './components/Explanation';
 import questions from './questionsList';
 import Display from './components/Display';
-import Opations from './components/Options';
+import Options from '../Quiz/components/Options';
 import End from './components/End';
 
 export default function Questions() {
     const [currentQuestionId, setCurrentQuestionId] = useState(0);
     const [showExplanation, setShowExplanation] = useState(false);
     const [showAnswer, setShowAnswer] = useState(false);
-    const [answerId, setAnswerId] = useState(null);
+    const [answerId, setAnswerId] = useState<number | null>(null);
     const [corrects, setCorrects] = useState(0);
 
     function nextQuestion() {
@@ -25,19 +25,19 @@ export default function Questions() {
         setCorrects(0);
     }
 
-    function toRespond(id) {
+    function toRespond(id: number): void {
         if (answerId !== null) return;
 
         setShowAnswer(true);
         setAnswerId(id);
-        if (id === questions.at(currentQuestionId).correctAnswerId) setCorrects(prev => prev + 1);
+        if (id === questions[currentQuestionId].correctAnswerId) setCorrects(prev => prev + 1);
     }
 
     return (
         <>
             {showExplanation && (
                 <Explanation
-                    explanation={questions.at(currentQuestionId).explanation}
+                    explanation={questions[currentQuestionId].explanation}
                     setShowExplanation={setShowExplanation}
                 />
             )}
@@ -45,7 +45,7 @@ export default function Questions() {
                 {currentQuestionId < questions.length ? (
                     <section className='flex min-h-screen flex-col'>
                         <Display questions={questions} currentQuestionId={currentQuestionId} />
-                        <Opations
+                        <Options
                             questions={questions}
                             currentQuestionId={currentQuestionId}
                             answerId={answerId}

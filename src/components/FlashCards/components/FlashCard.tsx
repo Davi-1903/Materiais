@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import type { FlashCardProps } from '../../../interfaces/Props';
+import clsx from 'clsx';
 
-export default function FlashCard({ question, answer, toRight, setToRight, addToTop, disabled }) {
+export default function FlashCard({ question, answer, toRight, setToRight, addToTop, disabled }: FlashCardProps) {
     const [invert, setInvert] = useState(false);
 
     function toggleInvert() {
@@ -17,7 +19,11 @@ export default function FlashCard({ question, answer, toRight, setToRight, addTo
 
     return (
         <article
-            className={`v relative aspect-video w-sm cursor-pointer shadow-2xl transition-all duration-500 select-none transform-3d ${invert ? 'rotate-y-180' : ''} ${toRight ? 'translate-x-full' : ''}`}
+            className={clsx(
+                'relative aspect-video w-sm cursor-pointer shadow-2xl transition-all duration-500 select-none transform-3d',
+                invert && 'rotate-y-180',
+                toRight && 'translate-x-full',
+            )}
             onTransitionEnd={onTransitionEnd}
             onClick={toggleInvert}
             role='button'

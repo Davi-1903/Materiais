@@ -1,4 +1,6 @@
-const flashcards = [
+import type { FlashCard } from '../../interfaces/Objects';
+
+const flashcards: FlashCard[] = [
     {
         id: 1,
         question: 'O que é JavaScript?',

@@ -1,4 +1,6 @@
-const questions = [
+import type { Question } from '../../interfaces/Objects';
+
+const questions: Question[] = [
     {
         id: 1,
         question: 'O que o método map() faz em um array?',

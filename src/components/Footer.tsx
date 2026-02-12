@@ -1,4 +1,6 @@
-export default function Footer({ selected, setSelected }) {
+import type { FooterProps } from '../interfaces/Props';
+
+export default function Footer({ selected, setSelected }: FooterProps) {
     return (
         <footer className='fixed bottom-0 left-0 z-10 w-full bg-white p-2 shadow-2xl sm:bottom-4 sm:left-1/2 sm:w-fit sm:-translate-x-1/2 sm:rounded-2xl sm:p-4'>
             <nav>

@@ -1,4 +1,6 @@
-export default function End({ questions, corrects, handleRestart }) {
+import type { EndProps } from '../../../interfaces/Props';
+
+export default function End({ questions, corrects, handleRestart }: EndProps) {
     return (
         <>
             <h1 className='text-[3.6rem] font-bold text-gray-800'>Fim!</h1>
