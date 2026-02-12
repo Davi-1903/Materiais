@@ -34,7 +34,7 @@ export interface QuizOptionsProps {
 export interface QuestionsOptionsProps {
     questions: Question[];
     currentQuestionId: number;
-    answerId: number;
+    answerId: number | null;
     showAnswer: boolean;
     nextQuestion: () => void;
     toRespond: (id: number) => void;

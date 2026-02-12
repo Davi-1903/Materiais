@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Explanation from './components/Explanation';
 import questions from './questionsList';
+import Options from './components/Options';
 import Display from './components/Display';
-import Options from '../Quiz/components/Options';
+import Explanation from './components/Explanation';
 import End from './components/End';
 
 export default function Questions() {
@@ -37,7 +37,7 @@ export default function Questions() {
         <>
             {showExplanation && (
                 <Explanation
-                    explanation={questions[currentQuestionId].explanation}
+                    explanation={questions[currentQuestionId].explanation as string}
                     setShowExplanation={setShowExplanation}
                 />
             )}

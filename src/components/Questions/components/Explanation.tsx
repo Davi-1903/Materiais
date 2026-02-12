@@ -11,7 +11,7 @@ export default function Explanation({ explanation, setShowExplanation }: Explana
 
     useEffect(() => {
         function handleClick(event: MouseEvent) {
-            if (articleRef.current?.contains(event.target as Node)) {
+            if (!articleRef.current?.contains(event.target as Node)) {
                 setClose(true);
             }
         }

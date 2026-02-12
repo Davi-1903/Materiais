@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
+import Quiz from './components/Quiz';
 import Questions from './components/Questions';
 import FlashCards from './components/FlashCards';
-import Quiz from './components/Quiz';
 import Footer from './components/Footer';
 import type { Materiais } from './interfaces/Objects';
 
