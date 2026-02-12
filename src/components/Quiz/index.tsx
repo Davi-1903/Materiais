@@ -4,7 +4,7 @@ import Display from './components/Display';
 import Options from './components/Options';
 import End from './components/End';
 
-export default function App() {
+export default function Quiz() {
     const [questionId, setQuestionId] = useState(0);
     const [answeredId, setAnsweredId] = useState<number | null>(null);
     const [itsWrong, setWrong] = useState(false);
