@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Explanation } from '../../../interfaces/Props';
+import clsx from 'clsx';
 
 export default function Explanation({ explanation, setShowExplanation }: Explanation) {
     const [isClose, setClose] = useState(false);
@@ -22,7 +23,10 @@ export default function Explanation({ explanation, setShowExplanation }: Explana
 
     return (
         <section
-            className={`fixed inset-0 z-1 grid place-items-center bg-gray-800/20 backdrop-blur-sm ${isClose ? 'fade-out-animation' : 'fade-in-animation'}`}
+            className={clsx(
+                'fixed inset-0 z-1 grid place-items-center bg-gray-800/20 backdrop-blur-sm',
+                isClose ? 'fade-out-animation' : 'fade-in-animation',
+            )}
             onAnimationEnd={onAnimationEnd}
         >
             <article
